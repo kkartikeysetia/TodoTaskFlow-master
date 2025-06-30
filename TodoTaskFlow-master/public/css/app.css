@@ -1,0 +1,132 @@
+.app-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+.task-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+}
+/* === Filter Buttons Hover and Active Animation === */
+
+.filter-btn {
+  background-color: transparent;
+  border: none;
+  padding: 10px 16px;
+  font-size: 0.9 rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.filter-btn:hover {
+  background-color: #2a2a40;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  background-color: #4f46e5;
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border-radius: 6px;
+  border: 1.5px solid black; /* ✅ This adds black border */
+  background-color: #ffffff; /* Matches card bg */
+  color: var(--text-primary); /* Keeps text styled properly */
+}
+.search-bar:hover {
+  background-color: #bfdbfe; /* ✅ Light Blue */
+  color: #000000; /* Dark text for contrast */
+}
+.task-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.task-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Updated Add Task Form Styles */
+.add-task-container {
+  padding: 1.25rem; /* More padding */
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-color);
+}
+#add-task-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.form-inputs {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#new-task-title,
+#new-task-desc {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.75rem 0.25rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+#new-task-title:focus,
+#new-task-desc:focus {
+  outline: none;
+  border-bottom-color: var(--primary-color);
+}
+#new-task-desc {
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+#add-task-form .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--text-on-btn);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  align-self: flex-end; /* Align button with description */
+}
+
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--surface-card);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transform: translateX(calc(100% + 1.5rem));
+  transition: transform 0.4s ease-in-out;
+  z-index: 1000;
+}
+.toast.show {
+  transform: translateX(0);
+}

@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ========================================================= */
+/* === THEME 1: LIGHT NEUMORPHIC (FOR APP.HTML) === */
+/* ========================================================= */
+:root {
+  /* This is the default theme, used by app.html */
+  --primary-color: #8b5cf6;
+  --success-color: #2dd4bf;
+  --bg-app: #f4f4f5;
+  --surface-card: #fdfdff;
+  --btn-secondary-bg: #e4e4e7;
+  --text-primary: #27272a;
+  --text-secondary: #71717a;
+  --text-on-btn: #ffffff;
+  --text-on-secondary-btn: #3f3f46;
+  --border-color: #e4e4e7;
+  --shadow-main: 6px 6px 12px #d9d9da, -6px -6px 12px #ffffff;
+  --shadow-inset: inset 4px 4px 8px #d9d9da, inset -4px -4px 8px #ffffff;
+  --font-family-main: "Inter", sans-serif;
+  --border-radius-lg: 16px;
+  --border-radius-md: 12px;
+  --transition-fast: all 0.2s ease-in-out;
+}
+
+/* ========================================================= */
+/* === THEME 2: DARK GLASSMORPHISM (FOR INDEX.HTML) === */
+/* ========================================================= */
+html.dark {
+  /* This theme is ONLY activated when <html class="dark"> is present */
+  --primary-color: #8b5cf6;
+  --gradient-start: #4f46e5;
+  --gradient-end: #a855f7;
+  --bg-app: linear-gradient(145deg, #111827 0%, #1e1b4b 50%, #0c0a1d 100%);
+  --surface-card: rgba(30, 41, 59, 0.25); /* Semi-transparent surface */
+  --surface-input: rgba(51, 65, 85, 0.5);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-main: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --danger-color: #f43f5e;
+}
+
+/* --- Global Resets --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-family-main);
+  background: var(--bg-app);
+  color: var(--text-primary);
+}

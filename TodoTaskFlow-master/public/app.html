@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- To switch themes, change class="dark" to class="light" -->
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Todo App</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FINAL Stylesheet Links -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/card.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="logo">My Todo App</div>
+      <div class="user-profile">
+        <span id="user-name"></span>
+        <img
+          id="user-avatar"
+          src="https://via.placeholder.com/40"
+          alt="User Avatar"
+        />
+        <button id="sign-out-btn" class="btn-sign-out">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            width="20"
+            height="20"
+          >
+            <path
+              d="M16 13v-2H7v-2h9V7l4 4-4 4zm-5 7h-2v-2H7v-2H5v-2H3v-2h2V9h2V7h2V5h2v14z"
+            ></path>
+          </svg>
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="app-container">
+      <!-- Tab Navigation -->
+      <nav class="task-filters">
+        <button class="filter-btn active" data-filter="todo">
+          Todo (<span id="todo-count">0</span>)
+        </button>
+        <button class="filter-btn" data-filter="completed">
+          Completed (<span id="completed-count">0</span>)
+        </button>
+        <button class="filter-btn" data-filter="archived">
+          Archived (<span id="archived-count">0</span>)
+        </button>
+      </nav>
+
+      <!-- Add Task Form -->
+      <div class="add-task-container">
+        <form id="add-task-form">
+          <div class="form-inputs">
+            <input
+              type="text"
+              id="new-task-title"
+              placeholder="Add your task title..."
+              required
+            />
+            <textarea
+              id="new-task-desc"
+              placeholder="Add a description... (optional)"
+              rows="1"
+            ></textarea>
+
+            <!-- ✅ Priority Dropdown Added -->
+            <label
+              for="new-task-priority"
+              style="font-weight: 500; margin-top: 10px; display: block"
+            >
+              Priority (New Task)
+            </label>
+            <select
+              id="new-task-priority"
+              style="width: fit-content; padding: 5px 10px; border-radius: 6px"
+              required
+            >
+              <option value="" disabled selected>Select priority</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary">Submit</button>
+        </form>
+      </div>
+      <input
+        type="text"
+        id="search-tasks"
+        placeholder="Search tasks..."
+        class="search-bar"
+      />
+
+      <!-- Task List -->
+      <div id="task-list" class="task-list-container">
+        <!-- Tasks will be dynamically inserted here -->
+      </div>
+    </main>
+
+    <!-- Toast Notification Element -->
+    <div id="toast-notification" class="toast" hidden>
+      <div class="toast-content">
+        <p class="toast-title" id="toast-title">Task Updated</p>
+        <p class="toast-message" id="toast-message">Task moved to Completed.</p>
+      </div>
+    </div>
+
+    <!-- Task Item Template -->
+    <template id="task-item-template">
+      <div class="task-item" data-id="">
+        <div class="task-details">
+          <h3 class="task-title"></h3>
+          <p
+            class="task-desc"
+            style="font-size: 0.9rem; color: #ccc; margin-top: 4px"
+          ></p>
+          <span
+            class="task-priority"
+            style="font-size: 0.9rem; color: #8df; font-weight: 900"
+          ></span>
+
+          <div class="task-actions">
+            <!-- Buttons will be injected here by JS -->
+          </div>
+        </div>
+        <div class="task-meta" style="margin-top: 10px">
+          <span class="task-timestamp" style="display: block"></span>
+          <span
+            class="task-priority"
+            style="
+              display: block;
+              font-size: 0.85rem;
+              font-weight: 500;
+              color: #8df;
+            "
+          ></span>
+        </div>
+      </div>
+    </template>
+
+    <!-- ✅ JS Script -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

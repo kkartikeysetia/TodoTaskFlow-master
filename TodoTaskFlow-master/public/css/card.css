@@ -1,0 +1,60 @@
+.task-item {
+  background-color: var(--surface-card);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border-color); /* Use border instead of shadow */
+}
+.task-details {
+  flex-grow: 1;
+}
+.task-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+.task-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.task-actions .btn-action {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.task-actions .btn-action:active {
+  transform: translateY(1px);
+  opacity: 0.9;
+}
+.task-actions .btn-complete {
+  background-color: var(--success-color);
+  color: #0f172a;
+} /* Dark text on mint */
+.task-actions .btn-archive {
+  background-color: var(--btn-secondary-bg);
+  color: var(--text-on-secondary-btn);
+}
+
+.archived-text {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+.task-meta {
+  text-align: right;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}

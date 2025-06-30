@@ -1,0 +1,40 @@
+/* This file provides base button styles */
+.btn-primary,
+.btn-secondary,
+.btn-icon {
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-on-btn);
+}
+.btn-primary:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--text-on-secondary-btn);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: var(--text-secondary);
+  border-radius: 50%;
+}
+.btn-icon:hover {
+  background-color: #f4f4f5; /* Zinc 100 */
+  color: var(--text-primary);
+}

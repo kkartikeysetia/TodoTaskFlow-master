@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- The class "dark" here makes the dark theme the default. -->
+<!-- To switch to the light theme, change this to class="light" -->
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to TodoTaskFlow</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FINAL Stylesheet Links -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/buttons.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+  </head>
+  <body>
+    <main class="landing-container">
+      <header class="page-header">
+        <!-- SVG Logo -->
+        <div class="logo-shield">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient
+                id="logoGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" style="stop-color: #818cf8" />
+                <stop offset="100%" style="stop-color: #c084fc" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M12 2L4 5v6c0 5.55 3.58 10.4 8 11.95c4.42-1.55 8-6.4 8-11.95V5L12 2zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V13H5V6.3l7-3.11v9.8z"
+              fill="url(#logoGradient)"
+            />
+          </svg>
+        </div>
+        <h1>TodoTaskFlow</h1>
+        <p>Your Personal Productivity Companion</p>
+        <div class="access-note">
+          <!-- Shield Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"
+            />
+          </svg>
+          Age verification required for access
+        </div>
+      </header>
+
+      <div class="verification-card">
+        <h2>Verify Your Identity</h2>
+        <form id="age-verification-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              required
+            />
+            <span class="error-message" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <div class="input-with-icon">
+              <input
+                type="text"
+                onfocus="(this.type='date')"
+                onblur="(this.type='text')"
+                id="dob"
+                name="dob"
+                placeholder="dd-mm-yyyy"
+                required
+              />
+              <!-- Calendar Icon -->
+              <svg
+                class="input-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"
+                />
+              </svg>
+            </div>
+            <span class="error-message" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn-verify">
+            <!-- Checkmark Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"
+              />
+            </svg>
+            Verify & Continue
+          </button>
+        </form>
+      </div>
+
+      <p class="terms-text">
+        By continuing, you confirm that you are over 10 years old and agree to
+        our terms of service.
+      </p>
+    </main>
+    <script type="module" src="js/landing.js"></script>
+  </body>
+</html>

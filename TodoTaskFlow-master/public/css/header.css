@@ -1,0 +1,49 @@
+.app-header {
+  background-color: var(--surface-card);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.user-profile #user-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.user-profile #user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+}
+
+/* New Styles for Sign Out Button */
+.btn-sign-out {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-fast);
+}
+.btn-sign-out:hover {
+  background-color: var(--btn-secondary-bg);
+  color: var(--text-primary);
+}
+.btn-sign-out span {
+  font-weight: 500;
+}
