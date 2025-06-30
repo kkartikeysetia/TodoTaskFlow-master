@@ -67,6 +67,9 @@
   background-color: var(--surface-card);
   border: 1px solid var(--border-color);
 }
+.form-input:hover {
+  background-color: #ffffff;
+}
 #add-task-form {
   display: flex;
   align-items: flex-start;
@@ -99,6 +102,13 @@
   font-size: 0.9rem;
   resize: vertical;
 }
+#search-tasks:focus {
+  outline: none;
+  border: 3px solid #8df; /* bright bluish border */
+  background-color: #1e1e2f; /* optional: darker background on focus */
+  box-shadow: 0 0 7px #8df;
+  transition: all 0.3s ease-in-out;
+}
 
 #add-task-form .btn-primary {
   background-color: var(--primary-color);
@@ -109,7 +119,60 @@
   font-weight: 500;
   align-self: flex-end; /* Align button with description */
 }
+#new-task-title,
+#new-task-desc {
+  width: 100%;
+  /* Use the main page background color by default */
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-color); /* Give it a border */
+  border-radius: 12px; /* Rounded corners */
+  color: var(--text-primary);
+  padding: 0.85rem 1rem; /* More padding */
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out; /* Animate all properties */
+}
 
+/* This is the style for WHEN YOU CLICK (on focus) */
+#new-task-title:focus,
+#new-task-desc:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  /* Change the background to the card color (white in light mode) */
+  background-color: var(--surface-card);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3); /* Add a glow effect */
+}
+/* --- END OF FIX --- */
+
+#new-task-desc {
+  font-size: 0.9rem;
+  resize: vertical;
+  color: var(--text-secondary);
+}
+
+/* New layout for priority and submit button */
+.form-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+#new-task-priority {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+#add-task-form .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--text-on-btn);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+}
 .task-list-container {
   display: flex;
   flex-direction: column;
@@ -129,4 +192,46 @@
 }
 .toast.show {
   transform: translateX(0);
+}
+
+/* ================================== */
+/* === Responsive Styles (Mobile) === */
+/* ================================== */
+@media (max-width: 640px) {
+  .app-container {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+
+  .task-filters {
+    gap: 0.5rem;
+    flex-wrap: wrap; /* Allow filter buttons to wrap onto the next line */
+  }
+
+  /* Stack the 'Add Task' form vertically */
+  #add-task-form {
+    flex-direction: column;
+    align-items: stretch; /* Make children fill width */
+    gap: 1rem;
+  }
+
+  #add-task-form .btn-primary {
+    align-self: auto; /* Reset desktop alignment */
+    margin-top: 0.5rem; /* Add some space above the button */
+    padding: 0.85rem;
+    justify-content: center; /* Center button content */
+  }
+
+  /* Reposition toast notification for mobile */
+  .toast {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    /* Reset right positioning and adjust transform for vertical slide-in */
+    transform: translateY(calc(100% + 1rem));
+  }
+
+  .toast.show {
+    transform: translateY(0);
+  }
 }

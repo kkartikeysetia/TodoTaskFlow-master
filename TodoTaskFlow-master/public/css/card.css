@@ -58,3 +58,38 @@
   color: var(--text-secondary);
   white-space: nowrap;
 }
+
+/* ================================== */
+/* === Responsive Styles (Mobile) === */
+/* ================================== */
+@media (max-width: 640px) {
+  .task-item {
+    flex-direction: column; /* Stack details and meta vertically */
+    align-items: flex-start; /* Align all content to the left */
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .task-details {
+    width: 100%; /* Ensure details section takes full width */
+  }
+
+  .task-actions {
+    margin-top: 1rem;
+    width: 100%; /* Make action container full width */
+  }
+
+  .task-actions .btn-action {
+    flex-grow: 1; /* Make buttons grow to fill available space */
+    justify-content: center; /* Center text in buttons */
+  }
+
+  .task-meta {
+    text-align: left; /* Align meta text to the left */
+    width: 100%;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--border-color); /* Add a separator line */
+    padding-top: 0.75rem;
+    white-space: normal; /* Allow timestamp to wrap */
+  }
+}

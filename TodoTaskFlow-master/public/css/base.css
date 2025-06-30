@@ -29,7 +29,7 @@
 html.dark {
   /* This theme is ONLY activated when <html class="dark"> is present */
   --primary-color: #8b5cf6;
-  --gradient-start: #4f46e5;
+  --gradient-start: rgb(108, 104, 187);
   --gradient-end: #a855f7;
   --bg-app: linear-gradient(145deg, #111827 0%, #1e1b4b 50%, #0c0a1d 100%);
   --surface-card: rgba(30, 41, 59, 0.25); /* Semi-transparent surface */

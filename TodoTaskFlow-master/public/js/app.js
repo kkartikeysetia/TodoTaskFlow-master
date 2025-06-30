@@ -151,6 +151,17 @@ async function initializeApp() {
 document
   .getElementById("search-tasks")
   .addEventListener("input", handleSearchInput);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "/" && document.activeElement.tagName !== "INPUT") {
+    e.preventDefault();
+    document.getElementById("search-tasks").focus();
+  }
+
+  if (e.ctrlKey && e.key === "Enter") {
+    const form = document.getElementById("add-task-form");
+    form?.requestSubmit?.();
+  }
+});
 
 // Start the application
 document.addEventListener("DOMContentLoaded", initializeApp);

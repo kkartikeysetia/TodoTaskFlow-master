@@ -159,3 +159,27 @@
 #verify-btn {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* ================================== */
+/* === Responsive Styles (Mobile) === */
+/* ================================== */
+@media (max-width: 640px) {
+  .landing-container {
+    padding: 1.5rem 1rem;
+    /* Align to top to prevent issues with virtual keyboard */
+    justify-content: flex-start;
+  }
+
+  .page-header h1 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  .page-header p {
+    font-size: 1rem; /* Reduce subheading size */
+  }
+
+  .verification-card {
+    padding: 1.5rem; /* Reduce card padding for more content space */
+    width: 100%;
+  }
+}

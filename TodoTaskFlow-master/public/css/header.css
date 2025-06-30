@@ -47,3 +47,30 @@
 .btn-sign-out span {
   font-weight: 500;
 }
+
+/* ================================== */
+/* === Responsive Styles (Mobile) === */
+/* ================================== */
+@media (max-width: 640px) {
+  .app-header {
+    padding: 0.75rem 1rem; /* Tighter padding */
+  }
+
+  .logo {
+    font-size: 1.1rem; /* Slightly smaller logo text */
+  }
+
+  /* Hide the user name on small screens to save space */
+  .user-profile #user-name {
+    display: none;
+  }
+
+  /* Hide the "Sign Out" text, keeping only the icon */
+  .btn-sign-out span {
+    display: none;
+  }
+
+  .btn-sign-out {
+    padding: 0.5rem; /* Adjust padding for icon-only button */
+  }
+}
